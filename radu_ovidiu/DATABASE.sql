@@ -1,0 +1,1 @@
+SELECT * FROM time_sheet.time_tracking;
