@@ -1,0 +1,109 @@
+INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (1, 'Nicolae', 26,'0754827541', 1);
+INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (2, 'Marius', 20,'0754827541', 1);
+INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (3, 'Adrian', 22,'0754827541', 1);
+INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (4, 'Alex', 44,'0754827541', 14);
+INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (5, 'Marian', 36,'0754827541', 8);
+ INSERT INTO employee_info (employee_id, employee_name, employee_age, employee_phone_number, employee_experience)
+VALUES (6, 'Ioana', 28,' 074827541', 8);
+
+
+
+
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (1, 'GSD Software & Tehnology', '0722222222',1);
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (2, 'Software Academy', '074312345135',2);
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (3, 'Daimler', '98212222222',3);
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (4, 'BMW', '0281222222');
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (5, 'Porsche', '09982222222',4);
+INSERT INTO customer_info(customer_id, customer_name, customer_phone_number,project_info_project_id)
+VALUES (6, 'Tehnology', '1234732222',5);
+
+
+
+
+ 
+
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (1,  'GSD','Software Academy Training' ,1 );
+
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (2,   'Software Academy','Software Academy ' ,2 );
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (3,   'Daimler','Training',2 );
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (4,   'BMW','bmw beckend',3 );
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (5,  'Porsche','Porsche training',4 );
+INSERT INTO project_info(project_id,project_owner, project_name, customer_info_customer_id)
+VALUES (6, 'Tehnology','Fronted Testing',5 );
+
+
+
+
+insert into result_status(status_id,status) values(1 , 'in progress');
+insert into result_status(status_id,status) values(2 , 'in progress');
+insert into result_status(status_id,status) values(3 , 'in progress');
+insert into result_status(status_id,status) values(4 , 'in progress');
+insert into result_status(status_id,status) values(5 , 'in progress');
+insert into result_status(status_id,status) values(6 , 'in progress');
+
+
+
+
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (1, 'backend training ',1);
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (2, 'frontend training ',2);
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (3, 'testing',3);
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (4, 'refactor datebase code',4);
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (5, 'data structures and algorithms',5);
+insert into task_type(task_id, task,time_tracking_employee_info_employee_id) values (6, 'testing',6 );
+
+
+
+
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (1, 1, 1, 2, '2022-09-26', '2022-09-26', 'I studied the mysql tutorial pretty hard.', 2, 1,1,1,1,1);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (1, 3, 1, 2, '2022-09-26', '2022-09-26', 'I studied the project.', 2,2,2,2,2,2);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (1, 2, 2, 2, '2022-09-27', '2022-09-27', 'I developed all features.', 2,3,3,3,3,3);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 2, 2, 3, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9999', 1,4,4,4,4,4);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 2, 2, 3, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9998', 1,5,5,5,5,5);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 2, 2, 3, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9997', 1,5,5,5,5,5);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 2, 2, 3, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9996', 1,1,1,1,1,1);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 3, 2, 5, '2022-09-28', '2022-09-28', 'Refactoring: PBP-0001', 1,2,2,2,2,2);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (2, 1, 1, 5, '2022-09-28', '2022-09-28', 'Studied SQL Databases', 1,3,3,3,3,3);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (3, 2, 2, 8, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9999', 1,4,4,4,4,4);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (3, 3, 3, 1, '2022-09-28', '2022-09-28', 'Tested the frontend app: PBP-0001', 1,5,5,5,5,5);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (3, 1, 1, 1, '2022-09-29', '2022-09-29', 'Studied OCA', 1,2,2,2,2,2);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (4, 4, 1, 3, '2022-09-29', '2022-09-29', 'Studied the project', 1,3,3,3,3,3,3);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (4, 4, 2, 1, '2022-09-29', '2022-09-29', 'Fixed the following bugs: SPA-9999', 1,4,4,4,4,4);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (4, 2, 2, 1, '2022-09-28', '2022-09-28', 'I fixed the following bugs: BMW-9997', 2,5,5,5,5,5);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (5, 4, 2, 3, '2022-09-30', '2022-09-30', 'Refactoring: SPA-0003', 1,1,1,1,1,1);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (5, 2, 3, 2, '2022-09-30', '2022-09-30', 'Tested the backend app: BMW-0001', 1,2,2,2,2,2);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (5, 2, 2, 3, '2022-09-30', '2022-09-30', 'I fixed the following bugs: BMW-9995', 1,3,3,3,3,3);
+INSERT INTO time_tracking(employee_id, project_id, task_id, worked_hours, start_date, end_date, comment, status_id,employee_info_employee_id,task_type_task_id,task_type_time_tracking_employee_info_employee_id,project_info_project_id,result_status_status_id)
+VALUES (6, 5, 1, 2, '2022-09-26', '2022-09-26', 'fix bug #1237.', 2,2,2,2,2,2);
