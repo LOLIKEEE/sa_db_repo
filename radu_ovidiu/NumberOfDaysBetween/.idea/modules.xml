@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NumberOfDatesBetween.iml" filepath="$PROJECT_DIR$/NumberOfDatesBetween.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NumberOfDaysBetween.iml" filepath="$PROJECT_DIR$/NumberOfDaysBetween.iml" />
     </modules>
   </component>
 </project>
