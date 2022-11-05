@@ -15,8 +15,8 @@ public class NumberOfDaysBetween {
 
 
    public static int getNumberOfDaysBetween( LocalDateTime firstDate,LocalDateTime secondDate){
-        int daysBetween =(int) ChronoUnit.DAYS.between(firstDate,secondDate);
-        return daysBetween;
+        
+        return (int) ChronoUnit.DAYS.between(firstDate,secondDate);
 
     }
 }
