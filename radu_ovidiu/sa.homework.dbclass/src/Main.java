@@ -13,9 +13,16 @@ public class Main {
         LocalDate endDate = LocalDate.of(2022,9,26);
         TimeTracking timeTracking = new TimeTracking(1,employees,customer, projectName,projectOwner, taskType,2,startDate,endDate, "I studied the mysql tutorial pretty hard.","paid");
 
-        System.out.println("ID: "+timeTracking.getId()+"\nEmployeeName: "+timeTracking.getEmployeeId().getEmployeeName()+"\nCustomer: "+timeTracking.getCustomerId().getCustomerName()+"\nProject:"+timeTracking.getProjectId().getProjectName()+
-                        "\nProject owner: "+timeTracking.getOwnerId().getProjectOwnerName()+"\nTask type: "+timeTracking.getTaskId().getType()+"\nWorked hours: "+timeTracking.getWorkedHours()+
-                        "\nStart date: "+timeTracking.getStartDate()+"\nEnd date: "+timeTracking.getEndDate()+
-                "\nComment: "+timeTracking.getComment()+"\nRecord status: " +timeTracking.getRecordStatus());
+        System.out.println("ID: "+timeTracking.getId()+
+                "\nEmployeeName: "+timeTracking.getEmployee().getEmployeeId()+
+                "\nCustomer: "+timeTracking.getCustomer().getCustomerId()+
+                "\nProject:"+timeTracking.getProject().getProjectId()+
+                "\nProject owner: "+timeTracking.getOwner().getOwnerId()+
+                "\nTask type: "+timeTracking.getTask().getTaskId()+
+                "\nWorked hours: "+timeTracking.getWorkedHours()+
+                "\nStart date: "+timeTracking.getStartDate()+
+                "\nEnd date: "+timeTracking.getEndDate()+
+                "\nComment: "+timeTracking.getComment()+
+                "\nRecord status: " +timeTracking.getRecordStatus());
     }
 }

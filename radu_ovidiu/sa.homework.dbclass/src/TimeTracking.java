@@ -31,11 +31,11 @@ public class TimeTracking {
         return id;
     }
 
-    Customer getCustomerId() {
+    Customer getCustomer() {
         return customerId;
     }
 
-    Employees getEmployeeId() {
+    Employees getEmployee() {
         return employeeId;
     }
 
@@ -51,11 +51,11 @@ public class TimeTracking {
         return endDate;
     }
 
-    ProjectName getProjectId() {
+    ProjectName getProject() {
         return projectId;
     }
 
-    ProjectOwner getOwnerId() {
+    ProjectOwner getOwner() {
         return ownerId;
     }
 
@@ -67,7 +67,7 @@ public class TimeTracking {
         return recordStatus;
     }
 
-    TaskType getTaskId() {
+    TaskType getTask() {
         return taskId;
     }
 
