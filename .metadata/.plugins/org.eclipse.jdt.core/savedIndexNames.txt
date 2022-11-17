@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/Users/christopher/Desktop/software_academy/sa_repo/.metadata/.plugins/org.eclipse.jdt.core
+4233638687.index
+2345030636.index
+1865797976.index
