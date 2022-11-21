@@ -1,0 +1,7 @@
+18-Nov-2022 18:19:48.034 DEBUG -> Print class
+18-Nov-2022 18:19:48.034 INFO -> Print class
+18-Nov-2022 18:19:48.034 FATAL -> Print class
+18-Nov-2022 18:19:48.034 ERROR -> Print class
+18-Nov-2022 18:19:48.034 WARN -> Print class
+
+
