@@ -7,7 +7,7 @@ public class Project {
     public Project() {
     }
 
-    public Project(Integer id, String name) {
+    public Project(final Integer id, final String name) {
         this.id = id;
         this.name = name;
     }
@@ -16,7 +16,7 @@ public class Project {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -24,7 +24,7 @@ public class Project {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

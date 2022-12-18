@@ -7,7 +7,7 @@ public class RecordStatus {
     public RecordStatus() {
     }
 
-    public RecordStatus(Integer id, String status) {
+    public RecordStatus(final Integer id, final String status) {
         this.id = id;
         this.status = status;
     }
@@ -16,7 +16,7 @@ public class RecordStatus {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -24,7 +24,7 @@ public class RecordStatus {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(final String status) {
         this.status = status;
     }
 

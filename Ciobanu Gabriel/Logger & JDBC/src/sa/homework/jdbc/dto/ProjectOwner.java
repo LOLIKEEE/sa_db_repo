@@ -7,7 +7,7 @@ public class ProjectOwner {
     public ProjectOwner() {
     }
 
-    public ProjectOwner(Integer id, String name) {
+    public ProjectOwner(final Integer id, final String name) {
         this.id = id;
         this.name = name;
     }
@@ -16,7 +16,7 @@ public class ProjectOwner {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -24,7 +24,7 @@ public class ProjectOwner {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

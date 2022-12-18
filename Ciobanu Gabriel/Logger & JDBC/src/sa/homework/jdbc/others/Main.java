@@ -1,12 +1,8 @@
-package sa.homework.logger;
+package sa.homework.jdbc.others;
 
-import sa.homework.logger.classes.Database;
+import sa.homework.jdbc.others.Database;
 import sa.homework.logger.classes.Logger;
-import sa.homework.logger.enums.Destination;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 public class Main {

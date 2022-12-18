@@ -1,13 +1,12 @@
-package sa.homework.logger.classes;
+package sa.homework.jdbc.others;
 
 import sa.homework.resources.config.MyProperties;
-import sa.homework.logger.interfaces.ICrud;
 
 import java.sql.*;
 
 public class Database implements ICrud {
     @Override
-    public void readData(String tableName) {
+    public void readData(final String tableName) {
         try (Connection conn = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM timesheet." + tableName)) {
@@ -27,7 +26,7 @@ public class Database implements ICrud {
     }
 
     @Override
-    public void update(String tableName, String columnName, int id, Object value) {
+    public void update(final String tableName, final String columnName, final int id, final Object value) {
         try (Connection conn = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement pstmt = conn.prepareStatement("update " + tableName + " set " + columnName + "=? where id=?")) {
@@ -46,7 +45,7 @@ public class Database implements ICrud {
     }
 
     @Override
-    public void delete(String tableName, int id) {
+    public void delete(final String tableName, final int id) {
         try(Connection conn = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
             PreparedStatement pstmt = conn.prepareStatement("delete from " + tableName + " where id=?")) {
@@ -59,7 +58,7 @@ public class Database implements ICrud {
     }
 
     @Override
-    public void create(String tableName, String content) {
+    public void create(final String tableName, final String content) {
         try(Connection conn = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
             Statement stmt = conn.createStatement()) {

@@ -6,7 +6,7 @@ public enum Level {
     WARN,
     ERROR,
     FATAL;
-    public static Level toLevel(String s){
+    public static Level toLevel(final String s){
         switch (s) {
             case "INFO":
                 return INFO;

@@ -36,7 +36,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     }
 
     @Override
-    public Employee getById(Integer id) {
+    public Employee getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.employee WHERE employee.id=?")) {
@@ -57,7 +57,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     }
 
     @Override
-    public boolean update(Employee object) {
+    public boolean update(final Employee object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.employee set employee.name=?," +
@@ -83,7 +83,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     }
 
     @Override
-    public boolean delete(Employee object) {
+    public boolean delete(final Employee object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.employee WHERE employee.id=?")) {
@@ -105,7 +105,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     }
 
     @Override
-    public boolean create(Employee object) {
+    public boolean create(final Employee object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.employee(name,age,phone_number) values(?,?,?)")) {
@@ -129,7 +129,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.employee" +

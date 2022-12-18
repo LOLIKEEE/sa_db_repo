@@ -35,7 +35,7 @@ public class ProjectOwnerDAO implements IProjectOwnerDAO {
     }
 
     @Override
-    public ProjectOwner getById(Integer id) {
+    public ProjectOwner getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.project_owner" +
@@ -57,7 +57,7 @@ public class ProjectOwnerDAO implements IProjectOwnerDAO {
     }
 
     @Override
-    public boolean update(ProjectOwner object) {
+    public boolean update(final ProjectOwner object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.project_owner set project_owner.name=?" +
@@ -81,7 +81,7 @@ public class ProjectOwnerDAO implements IProjectOwnerDAO {
     }
 
     @Override
-    public boolean delete(ProjectOwner object) {
+    public boolean delete(final ProjectOwner object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.project_owner " +
@@ -104,7 +104,7 @@ public class ProjectOwnerDAO implements IProjectOwnerDAO {
     }
 
     @Override
-    public boolean create(ProjectOwner object) {
+    public boolean create(final ProjectOwner object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.project_owner(name) " +
@@ -127,7 +127,7 @@ public class ProjectOwnerDAO implements IProjectOwnerDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.project_owner" +

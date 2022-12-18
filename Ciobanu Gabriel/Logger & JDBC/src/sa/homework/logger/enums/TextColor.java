@@ -13,7 +13,7 @@ public enum TextColor {
     WHITE("\u001B[0m");
     private final String color;
 
-    TextColor(String color) {
+    TextColor(final String color) {
         this.color = color;
     }
 

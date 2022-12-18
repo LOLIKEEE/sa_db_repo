@@ -17,7 +17,7 @@ public class WriteFile {
     private static String currentFileName = MyProperties.getFileName() + fileCounter + MyProperties.getFileExtension();
 
 
-    public static void writeLog(LogItem logItem) {
+    public static void writeLog(final LogItem logItem) {
 
         createFile();
 
@@ -40,7 +40,7 @@ public class WriteFile {
         } while (true);
     }
 
-    private static boolean writeFile(String fileName, String message) {
+    private static boolean writeFile(final String fileName, final String message) {
         File file = new File(MyProperties.getFilePath() + fileName);
         if (file.canWrite()) {
             try (FileWriter myWriter = new FileWriter(file, true)) {
@@ -55,7 +55,7 @@ public class WriteFile {
         }
     }
 
-    private static boolean newFile(String fileName) {
+    private static boolean newFile(final String fileName) {
         try {
 
             File myFile = new File(MyProperties.getFilePath() + fileName);
@@ -73,7 +73,7 @@ public class WriteFile {
         return false;
     }
 
-    private static boolean checkFileSize(File file) {
+    private static boolean checkFileSize(final File file) {
 
         double fileLength = (double) file.length() / MEGA_BYTE;
 

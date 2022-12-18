@@ -35,7 +35,7 @@ public class ProjectDAO implements IProjectDAO {
     }
 
     @Override
-    public Project getById(Integer id) {
+    public Project getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.project WHERE project.id=?")) {
@@ -56,7 +56,7 @@ public class ProjectDAO implements IProjectDAO {
     }
 
     @Override
-    public boolean update(Project object) {
+    public boolean update(final Project object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.project set project.name=? " +
@@ -80,7 +80,7 @@ public class ProjectDAO implements IProjectDAO {
     }
 
     @Override
-    public boolean delete(Project object) {
+    public boolean delete(final Project object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.project WHERE project.id=?")) {
@@ -102,7 +102,7 @@ public class ProjectDAO implements IProjectDAO {
     }
 
     @Override
-    public boolean create(Project object) {
+    public boolean create(final Project object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.project(name) values(?)")) {
@@ -124,7 +124,7 @@ public class ProjectDAO implements IProjectDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.project" +

@@ -18,9 +18,9 @@ public class TimeTracking {
     public TimeTracking() {
     }
 
-    public TimeTracking(Integer id, Employee employee, Project project, Integer workedHours,
-                        ProjectOwner projectOwner, Task task, Date start, Date end, Customer customer,
-                        RecordStatus recordStatus, String comment) {
+    public TimeTracking(final Integer id, final Employee employee, final Project project, final Integer workedHours,
+                        final ProjectOwner projectOwner, final Task task, final Date start, final Date end, final Customer customer,
+                        final RecordStatus recordStatus, final String comment) {
         this.id = id;
         this.employee = employee;
         this.project = project;
@@ -38,7 +38,7 @@ public class TimeTracking {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -46,7 +46,7 @@ public class TimeTracking {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
+    public void setEmployee(final Employee employee) {
         this.employee = employee;
     }
 
@@ -54,7 +54,7 @@ public class TimeTracking {
         return project;
     }
 
-    public void setProject(Project project) {
+    public void setProject(final Project project) {
         this.project = project;
     }
 
@@ -62,7 +62,7 @@ public class TimeTracking {
         return workedHours;
     }
 
-    public void setWorkedHours(Integer workedHours) {
+    public void setWorkedHours(final Integer workedHours) {
         this.workedHours = workedHours;
     }
 
@@ -70,7 +70,7 @@ public class TimeTracking {
         return projectOwner;
     }
 
-    public void setProjectOwner(ProjectOwner projectOwner) {
+    public void setProjectOwner(final ProjectOwner projectOwner) {
         this.projectOwner = projectOwner;
     }
 
@@ -78,7 +78,7 @@ public class TimeTracking {
         return task;
     }
 
-    public void setTask(Task task) {
+    public void setTask(final Task task) {
         this.task = task;
     }
 
@@ -86,7 +86,7 @@ public class TimeTracking {
         return start;
     }
 
-    public void setStart(Date start) {
+    public void setStart(final Date start) {
         this.start = start;
     }
 
@@ -94,7 +94,7 @@ public class TimeTracking {
         return end;
     }
 
-    public void setEnd(Date end) {
+    public void setEnd(final Date end) {
         this.end = end;
     }
 
@@ -102,7 +102,7 @@ public class TimeTracking {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(final Customer customer) {
         this.customer = customer;
     }
 
@@ -110,7 +110,7 @@ public class TimeTracking {
         return recordStatus;
     }
 
-    public void setRecordStatus(RecordStatus recordStatus) {
+    public void setRecordStatus(final RecordStatus recordStatus) {
         this.recordStatus = recordStatus;
     }
 
@@ -118,7 +118,7 @@ public class TimeTracking {
         return comment;
     }
 
-    public void setComment(String comment) {
+    public void setComment(final String comment) {
         this.comment = comment;
     }
 

@@ -33,7 +33,7 @@ public class CustomerDAO implements ICustomerDAO {
     }
 
     @Override
-    public Customer getById(Integer id) {
+    public Customer getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.customer WHERE customer.id=?")) {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -52,7 +52,7 @@ public class CustomerDAO implements ICustomerDAO {
     }
 
     @Override
-    public boolean update(Customer object) {
+    public boolean update(final Customer object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.customer set customer.name=?," + "customer.contact_number=? WHERE customer.id=? ")) {
 
             preparedStatement.setString(1, object.getName());
@@ -74,7 +74,7 @@ public class CustomerDAO implements ICustomerDAO {
     }
 
     @Override
-    public boolean delete(Customer object) {
+    public boolean delete(final Customer object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.customer WHERE customer.id=?")) {
 
             preparedStatement.setInt(1, object.getId());
@@ -94,7 +94,7 @@ public class CustomerDAO implements ICustomerDAO {
     }
 
     @Override
-    public boolean create(Customer object) {
+    public boolean create(final Customer object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.customer(name,contact_number) values(?,?)")) {
 
             preparedStatement.setString(1, object.getName());
@@ -115,7 +115,7 @@ public class CustomerDAO implements ICustomerDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.customer WHERE customer.id=?")) {
 
             preparedStatement.setInt(1, id);

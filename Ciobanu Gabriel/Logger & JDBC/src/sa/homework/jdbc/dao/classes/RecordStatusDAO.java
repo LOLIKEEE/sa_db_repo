@@ -35,7 +35,7 @@ public class RecordStatusDAO implements IRecordStatusDAO {
     }
 
     @Override
-    public RecordStatus getById(Integer id) {
+    public RecordStatus getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.record_status " +
@@ -57,7 +57,7 @@ public class RecordStatusDAO implements IRecordStatusDAO {
     }
 
     @Override
-    public boolean update(RecordStatus object) {
+    public boolean update(final RecordStatus object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.record_status set record_status.status=?" +
@@ -81,7 +81,7 @@ public class RecordStatusDAO implements IRecordStatusDAO {
     }
 
     @Override
-    public boolean delete(RecordStatus object) {
+    public boolean delete(final RecordStatus object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.record_status " +
@@ -104,7 +104,7 @@ public class RecordStatusDAO implements IRecordStatusDAO {
     }
 
     @Override
-    public boolean create(RecordStatus object) {
+    public boolean create(final RecordStatus object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.record_status(status)" +
@@ -127,7 +127,7 @@ public class RecordStatusDAO implements IRecordStatusDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.record_status " +

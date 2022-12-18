@@ -15,7 +15,7 @@ public class LogItem {
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm:ss.SSS");
 
 
-    public LogItem(Level level, String message, LocalDateTime dateTime) {
+    public LogItem(final Level level, final String message, final LocalDateTime dateTime) {
         this.dateTime = dateTime;
         this.level = level;
         this.message = message;
@@ -31,12 +31,12 @@ public class LogItem {
     }
 
     //unsafe because the method depend of a static index
-    public static LogItem parseLog(String s) {
+    public static LogItem parseLog(final String s) {
         return new LogItem(Level.toLevel(s.substring(25, 30).trim()), s.substring(33),
                 toLocalDateTime(s.substring(0, 24).trim()));
     }
 
-    private static LocalDateTime toLocalDateTime(String s) {
+    private static LocalDateTime toLocalDateTime(final String s) {
         return LocalDateTime.parse(s, DATE_TIME_FORMATTER);
     }
 

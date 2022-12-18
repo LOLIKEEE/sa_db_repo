@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public interface Mapper {
-    static Customer toCustomer(ResultSet resultSet) throws SQLException {
+    static Customer toCustomer(final ResultSet resultSet) throws SQLException {
         Customer customer = new Customer();
         customer.setId(resultSet.getInt(1));
         customer.setName(resultSet.getString(2));
@@ -15,7 +15,7 @@ public interface Mapper {
         return customer;
     }
 
-    static Employee toEmployee(ResultSet resultSet) throws SQLException {
+    static Employee toEmployee(final ResultSet resultSet) throws SQLException {
         Employee employee = new Employee();
 
         employee.setId(resultSet.getInt(1));
@@ -26,7 +26,7 @@ public interface Mapper {
         return employee;
     }
 
-    static Project toProject(ResultSet resultSet) throws SQLException {
+    static Project toProject(final ResultSet resultSet) throws SQLException {
         Project project = new Project();
 
         project.setId(resultSet.getInt(1));
@@ -35,7 +35,7 @@ public interface Mapper {
         return project;
     }
 
-    static ProjectOwner toProjectOwner(ResultSet resultSet) throws SQLException {
+    static ProjectOwner toProjectOwner(final ResultSet resultSet) throws SQLException {
         ProjectOwner projectOwner = new ProjectOwner();
 
         projectOwner.setId(resultSet.getInt(1));
@@ -44,7 +44,7 @@ public interface Mapper {
         return projectOwner;
     }
 
-    static RecordStatus toRecordStatus(ResultSet resultSet) throws SQLException {
+    static RecordStatus toRecordStatus(final ResultSet resultSet) throws SQLException {
         RecordStatus recordStatus = new RecordStatus();
 
         recordStatus.setId(resultSet.getInt(1));
@@ -53,7 +53,7 @@ public interface Mapper {
         return recordStatus;
     }
 
-    static Task toTask(ResultSet resultSet) throws SQLException {
+    static Task toTask(final ResultSet resultSet) throws SQLException {
         Task task = new Task();
 
         task.setId(resultSet.getInt(1));
@@ -62,7 +62,7 @@ public interface Mapper {
         return task;
     }
 
-    static TimeTracking toTimeTracking(ResultSet resultSet) throws SQLException {
+    static TimeTracking toTimeTracking(final ResultSet resultSet) throws SQLException {
         TimeTracking timeTracking = new TimeTracking();
 
         timeTracking.setId(resultSet.getInt(1));

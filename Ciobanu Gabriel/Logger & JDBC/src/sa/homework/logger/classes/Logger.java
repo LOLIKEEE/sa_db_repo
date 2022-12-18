@@ -12,31 +12,31 @@ import java.util.List;
 public class Logger {
     private static Destination logDestination = Destination.CONSOLE;
 
-    public static void debug(String message) {
+    public static void debug(final String message) {
         sendLogItem(new LogItem(Level.DEBUG, message, LocalDateTime.now()));
     }
 
 
-    public static void info(String message) {
+    public static void info(final String message) {
         sendLogItem(new LogItem(Level.INFO, message, LocalDateTime.now()));
     }
 
 
-    public static void warn(String message) {
+    public static void warn(final String message) {
         sendLogItem(new LogItem(Level.WARN, message, LocalDateTime.now()));
     }
 
 
-    public static void error(String message) {
+    public static void error(final String message) {
         sendLogItem(new LogItem(Level.ERROR, message, LocalDateTime.now()));
     }
 
 
-    public static void fatal(String message) {
+    public static void fatal(final String message) {
         sendLogItem(new LogItem(Level.FATAL, message, LocalDateTime.now()));
     }
 
-    private static void sendLogItem(LogItem logItem) {
+    private static void sendLogItem(final LogItem logItem) {
         switch (logDestination) {
             case FILE:
                 WriteFile.writeLog(logItem);
@@ -55,7 +55,7 @@ public class Logger {
     }
 
 
-    public static List<LogItem> getAllLogs(LocalDate localDate) {
+    public static List<LogItem> getAllLogs(final LocalDate localDate) {
         List<LogItem> logList = ReadFile.getAllLogs();
         List<LogItem> logListByDate = new ArrayList<>();
         for (LogItem log : logList) {
@@ -66,7 +66,7 @@ public class Logger {
         return logListByDate;
     }
 
-    public static List<LogItem> getAllLogs(LocalTime start, LocalTime end, LocalDate localDate) {
+    public static List<LogItem> getAllLogs(final LocalTime start, final LocalTime end, final LocalDate localDate) {
         List<LogItem> logListByDate = getAllLogs(localDate);
         List<LogItem> logListByDateTime = new ArrayList<>();
         for (LogItem log : logListByDate) {
@@ -78,7 +78,7 @@ public class Logger {
         return logListByDateTime;
     }
 
-    public static List<LogItem> getAllLogs(Level level) {
+    public static List<LogItem> getAllLogs(final Level level) {
         List<LogItem> logList = ReadFile.getAllLogs();
         List<LogItem> logListByLevel = new ArrayList<>();
         for (LogItem log : logList) {
@@ -89,12 +89,12 @@ public class Logger {
         return logListByLevel;
     }
 
-    public static List<LogItem> getAllLogs(String date) {
+    public static List<LogItem> getAllLogs(final String date) {
         LocalDate localDate = LocalDate.parse(date);
         return getAllLogs(localDate);
     }
 
-    public static void setDestination(Destination destination) {
+    public static void setDestination(final Destination destination) {
         logDestination = destination;
     }
 }

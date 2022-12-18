@@ -46,7 +46,7 @@ public class TimeTrackingDAO implements ITimeTrackingDAO {
     }
 
     @Override
-    public TimeTracking getById(Integer id) {
+    public TimeTracking getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT t_t.id,t_t.employeeID, e.name, e.age," +
@@ -79,7 +79,7 @@ public class TimeTrackingDAO implements ITimeTrackingDAO {
     }
 
     @Override
-    public boolean update(TimeTracking object) {
+    public boolean update(final TimeTracking object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.time_tracking as t" +
@@ -157,7 +157,7 @@ public class TimeTrackingDAO implements ITimeTrackingDAO {
     }
 
     @Override
-    public boolean delete(TimeTracking object) {
+    public boolean delete(final TimeTracking object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.time_tracking " +
@@ -180,7 +180,7 @@ public class TimeTrackingDAO implements ITimeTrackingDAO {
     }
 
     @Override
-    public boolean create(TimeTracking object) {
+    public boolean create(final TimeTracking object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.time_tracking" +
@@ -256,7 +256,7 @@ public class TimeTrackingDAO implements ITimeTrackingDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.time_tracking WHERE" +

@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IDAO<T> {
     List<T> getAll();
-    T getById(Integer id);
-    boolean update(T object);
-    boolean delete(T object);
-    boolean create(T object);
-    boolean exists(Integer id);
+    T getById(final Integer id);
+    boolean update(final T object);
+    boolean delete(final T object);
+    boolean create(final T object);
+    boolean exists(final Integer id);
 }

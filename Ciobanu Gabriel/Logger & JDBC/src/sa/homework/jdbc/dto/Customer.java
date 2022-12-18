@@ -9,7 +9,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer id, String name, String contactNumber) {
+    public Customer(final Integer id, final String name, final String contactNumber) {
         this.id = id;
         this.name = name;
         this.contactNumber = contactNumber;
@@ -19,7 +19,7 @@ public class Customer {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -27,7 +27,7 @@ public class Customer {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 

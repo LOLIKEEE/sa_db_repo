@@ -9,7 +9,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String name, Integer age, String phoneNumber) {
+    public Employee(final Integer id, final String name, final Integer age, final String phoneNumber) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -20,7 +20,7 @@ public class Employee {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -28,7 +28,7 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -36,7 +36,7 @@ public class Employee {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(final Integer age) {
         this.age = age;
     }
 
@@ -44,7 +44,7 @@ public class Employee {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(final String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

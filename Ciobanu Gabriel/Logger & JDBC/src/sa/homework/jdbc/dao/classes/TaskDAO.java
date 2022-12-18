@@ -33,7 +33,7 @@ public class TaskDAO implements ITaskDAO {
     }
 
     @Override
-    public Task getById(Integer id) {
+    public Task getById(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.task WHERE task.id=?")) {
 
             preparedStatement.setInt(1, id);
@@ -53,7 +53,7 @@ public class TaskDAO implements ITaskDAO {
     }
 
     @Override
-    public boolean update(Task object) {
+    public boolean update(final Task object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("UPDATE timesheet.task set task.name=?" + " WHERE task.id=? ")) {
 
             preparedStatement.setString(1, object.getName());
@@ -74,7 +74,7 @@ public class TaskDAO implements ITaskDAO {
     }
 
     @Override
-    public boolean delete(Task object) {
+    public boolean delete(final Task object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM timesheet.task WHERE task.id=?")) {
 
             preparedStatement.setInt(1, object.getId());
@@ -94,7 +94,7 @@ public class TaskDAO implements ITaskDAO {
     }
 
     @Override
-    public boolean create(Task object) {
+    public boolean create(final Task object) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(), MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword()); PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO timesheet.task(name) " + "values(?)")) {
 
             preparedStatement.setString(1, object.getName());
@@ -114,7 +114,7 @@ public class TaskDAO implements ITaskDAO {
     }
 
     @Override
-    public boolean exists(Integer id) {
+    public boolean exists(final Integer id) {
         try (Connection connection = DriverManager.getConnection(MyProperties.getDatabaseUrl(),
                 MyProperties.getDatabaseUser(), MyProperties.getDatabasePassword());
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM timesheet.task" +
