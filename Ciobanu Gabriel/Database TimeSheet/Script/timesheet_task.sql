@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `timesheet` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `timesheet`;
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: timesheet
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,29 +18,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `employees`
+-- Table structure for table `task`
 --
 
-DROP TABLE IF EXISTS `employees`;
+DROP TABLE IF EXISTS `task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `employees` (
+CREATE TABLE `task` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
-  `age` int DEFAULT NULL,
-  `phone_number` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `employees`
+-- Dumping data for table `task`
 --
 
-LOCK TABLES `employees` WRITE;
-/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'Nicolae',26,'0754827541'),(2,'Radu',31,'0754827555'),(3,'Gabriel',25,'0754827010'),(4,'Sorin',32,'0741154269'),(5,'Mirel',34,'0741852354');
-/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+LOCK TABLES `task` WRITE;
+/*!40000 ALTER TABLE `task` DISABLE KEYS */;
+INSERT INTO `task` VALUES (1,'Study'),(2,'Development');
+/*!40000 ALTER TABLE `task` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-17 11:17:49
+-- Dump completed on 2022-12-18 10:25:02
