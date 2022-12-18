@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `timesheet` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `timesheet`;
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: timesheet
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,30 +18,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `comments`
+-- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `comments`;
+DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `comments` (
+CREATE TABLE `employee` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `description` varchar(100) DEFAULT NULL,
-  `time_trackingID` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `time_trackingID` (`time_trackingID`),
-  CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`time_trackingID`) REFERENCES `time_tracking` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `name` varchar(45) DEFAULT NULL,
+  `age` int DEFAULT NULL,
+  `phone_number` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `comments`
+-- Dumping data for table `employee`
 --
 
-LOCK TABLES `comments` WRITE;
-/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,'I studied the mysql tutorial pretty hard.',1),(2,'I studied the project.',1),(3,'I developed all features.',1),(4,'I fixed the following bugs: BMW-9999',2),(5,'I fixed the following bugs: BMW-9998',2),(6,'I fixed the following bugs: BMW-9997',2),(7,'I fixed the following bugs: BMW-9996',2),(8,'Refactoring: PBP-0001',2),(9,'Studied SQL Databases',2),(10,'I fixed the following bugs: BMW-9999',3),(11,'Tested the frontend app: PBP-0001',3),(12,'Studied OCA',3);
-/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+INSERT INTO `employee` VALUES (1,'Nicolae',27,'0754827541'),(2,'Radu',31,'0754827555'),(3,'Gabriel',25,'0754827010'),(4,'Sorin',32,'0741154269'),(5,'Mirel',34,'0741852354');
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-17 11:17:49
+-- Dump completed on 2022-12-18 10:25:02

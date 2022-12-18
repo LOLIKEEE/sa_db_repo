@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `timesheet` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `timesheet`;
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: timesheet
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,6 +35,7 @@ CREATE TABLE `time_tracking` (
   `end_date` date DEFAULT NULL,
   `customerID` int DEFAULT NULL,
   `recordID` int DEFAULT NULL,
+  `comment` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `employeeID` (`employeeID`),
   KEY `projectID` (`projectID`),
@@ -40,13 +43,13 @@ CREATE TABLE `time_tracking` (
   KEY `taskID` (`taskID`),
   KEY `customerID` (`customerID`),
   KEY `recordID` (`recordID`),
-  CONSTRAINT `time_tracking_ibfk_1` FOREIGN KEY (`employeeID`) REFERENCES `employees` (`id`),
-  CONSTRAINT `time_tracking_ibfk_2` FOREIGN KEY (`projectID`) REFERENCES `projects` (`id`),
-  CONSTRAINT `time_tracking_ibfk_3` FOREIGN KEY (`project_ownerID`) REFERENCES `project_owners` (`id`),
-  CONSTRAINT `time_tracking_ibfk_4` FOREIGN KEY (`taskID`) REFERENCES `tasks` (`id`),
-  CONSTRAINT `time_tracking_ibfk_5` FOREIGN KEY (`customerID`) REFERENCES `customers` (`id`),
+  CONSTRAINT `time_tracking_ibfk_1` FOREIGN KEY (`employeeID`) REFERENCES `employee` (`id`),
+  CONSTRAINT `time_tracking_ibfk_2` FOREIGN KEY (`projectID`) REFERENCES `project` (`id`),
+  CONSTRAINT `time_tracking_ibfk_3` FOREIGN KEY (`project_ownerID`) REFERENCES `project_owner` (`id`),
+  CONSTRAINT `time_tracking_ibfk_4` FOREIGN KEY (`taskID`) REFERENCES `task` (`id`),
+  CONSTRAINT `time_tracking_ibfk_5` FOREIGN KEY (`customerID`) REFERENCES `customer` (`id`),
   CONSTRAINT `time_tracking_ibfk_6` FOREIGN KEY (`recordID`) REFERENCES `record_status` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +58,7 @@ CREATE TABLE `time_tracking` (
 
 LOCK TABLES `time_tracking` WRITE;
 /*!40000 ALTER TABLE `time_tracking` DISABLE KEYS */;
-INSERT INTO `time_tracking` VALUES (1,1,1,2,1,1,'2022-09-26','2022-09-26',1,1),(2,1,2,2,2,1,'2022-09-26','2022-09-26',2,4),(3,1,3,2,3,2,'2022-09-27','2022-09-27',3,1),(4,2,3,3,3,2,'2022-09-28','2022-09-28',3,2),(5,2,2,5,2,2,'2022-09-28','2022-09-28',2,2),(6,2,1,5,1,2,'2022-09-28','2022-09-28',1,2),(7,3,3,8,3,2,'2022-09-28','2022-09-28',3,2),(8,3,2,1,2,2,'2022-09-29','2022-09-29',2,2),(9,3,1,1,1,2,'2022-09-29','2022-09-29',1,2),(16,4,4,5,1,1,'2022-09-30','2022-09-30',4,1),(17,4,5,7,2,2,'2022-10-02','2022-10-02',5,2),(18,4,3,8,3,1,'2022-10-03','2022-10-03',3,4),(19,5,4,1,1,2,'2022-10-04','2022-10-04',4,4),(20,5,5,4,2,1,'2022-10-05','2022-10-05',5,1),(21,5,3,12,3,2,'2022-10-10','2022-10-11',3,2);
+INSERT INTO `time_tracking` VALUES (1,1,1,2,1,1,'2022-09-26','2022-09-26',1,1,'I studied the project.'),(2,1,2,2,2,1,'2022-09-26','2022-09-26',2,4,'I studied the project.'),(3,1,3,2,3,2,'2022-09-27','2022-09-27',3,1,'I studied the project.'),(4,2,3,3,3,2,'2022-09-28','2022-09-28',3,2,'I studied the project.'),(5,2,2,5,2,2,'2022-09-28','2022-09-28',2,2,'I studied the project.'),(6,2,1,5,1,2,'2022-09-28','2022-09-28',1,2,'I studied the project.'),(7,3,3,8,3,2,'2022-09-28','2022-09-28',3,2,'I studied the project.'),(8,3,2,1,2,2,'2022-09-29','2022-09-29',2,2,'I studied the project.'),(9,3,1,1,1,2,'2022-09-29','2022-09-29',1,2,'I studied the project.'),(16,4,4,5,1,1,'2022-09-30','2022-09-30',4,1,'I studied the project.'),(17,4,5,7,2,2,'2022-10-02','2022-10-02',5,2,'I studied the project.'),(18,4,3,8,3,1,'2022-10-03','2022-10-03',3,4,'I studied the project.'),(19,5,4,1,1,2,'2022-10-04','2022-10-04',4,4,'I studied the project.'),(20,5,5,4,2,1,'2022-10-05','2022-10-05',5,1,'I studied the project.'),(21,5,3,12,3,2,'2022-10-10','2022-10-11',3,2,'I studied the project.'),(22,2,2,4,2,2,'2022-04-18','2022-05-20',2,2,'Study from Udemy.');
 /*!40000 ALTER TABLE `time_tracking` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -68,4 +71,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-17 11:17:49
+-- Dump completed on 2022-12-18 10:25:02

@@ -1,0 +1,6 @@
+14-Dec-2022 12:00:35.059 DEBUG -> Print class
+14-Dec-2022 12:00:35.059 INFO -> Print class
+14-Dec-2022 12:00:35.059 ERROR -> Print class
+14-Dec-2022 12:00:35.059 WARN -> Print class
+
+
