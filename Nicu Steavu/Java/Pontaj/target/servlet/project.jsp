@@ -76,14 +76,14 @@
                                             <td>
                                                 <c:choose>
                                                     <c:when test="${p.getDisabled() == false}">
-                                                        <button type="button" name="p${p.getId()}"
+                                                        <button type="button" name="${p.getId()}"
                                                             class="btn btn-primary" onclick="myFunction(this)"
                                                             data-bs-toggle="modal" data-bs-target="#editProjectModal">
                                                             <fmt:message key="but.edit" />
                                                         </button>
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <button type="button" name="p${p.getId()}"
+                                                        <button type="button" name="${p.getId()}"
                                                             class="btn btn-primary" onclick="myFunction(this)"
                                                             data-bs-toggle="modal" data-bs-target="#editProjectModal"
                                                             disabled>
@@ -123,7 +123,7 @@
                                             <fmt:message key="table.projectOwner" />
                                         </th>
                                         <th>
-                                            <fmt:message key="table.CustomerId" />
+                                            <fmt:message key="table.customerId" />
                                         </th>
                                     </tr>
                                 </thead>

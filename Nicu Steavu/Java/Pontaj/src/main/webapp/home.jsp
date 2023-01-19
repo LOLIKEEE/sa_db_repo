@@ -106,7 +106,7 @@
                                             <c:choose>
                                                 <c:when test="${sessionScope.employeeId == t.getEmployee().getId()}">
                                                     <td>
-                                                        <button type="button" name="tEdit${t.getId()}"
+                                                        <button type="button" name="${t.getId()}"
                                                             onclick="myFunction(this)" class="btn btn-primary"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#editTimeTrackingModal">
@@ -115,7 +115,7 @@
                                                     </td>
                                                     <td>
                                                         <form action="home" method="post">
-                                                            <input type="hidden" name="tDelete${t.getId()}"
+                                                            <input type="hidden" name="${t.getId()}"
                                                                 value="delete" />
                                                             <input type="submit" class="btn btn-primary"
                                                                 name="actionDelete" value="delete" />
