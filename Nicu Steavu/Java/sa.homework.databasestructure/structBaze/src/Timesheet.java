@@ -3,7 +3,6 @@ import java.util.*;
 import java.time.*;
 
 public class Timesheet {
-    private static int count = 0;
     private int id, workHours;
     private LocalDate startDate, endDate;
     private String comment;
